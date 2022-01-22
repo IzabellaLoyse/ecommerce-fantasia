@@ -1,0 +1,49 @@
+@import "./theme";
+
+.btn {
+  border-radius: $global-border-radius;
+  border: none;
+  color: map-get($theme-colors, "primary-color");
+  cursor: pointer;
+  font-weight: map-get($font-weight, "bold");
+  text-align: center;
+  transition: $global-transition;
+
+  &--medium {
+    font-size: 0.875rem;
+    height: 1.8rem;
+    width: 63%;
+  }
+
+  &--small {
+    font-size: 0.75rem;
+    height: 1.2rem;
+    width: 26%;
+  }
+}
+
+.btn--primary-color {
+  background-color: map-get($theme-colors, "tertiary-color");
+
+  &:hover {
+    background-color: lighten(map-get($theme-colors, "tertiary-color"), 10%);
+  }
+}
+
+
+.btn--secondary-color {
+  background-color: map-get($theme-colors, "light-blue-color");
+
+  &:hover {
+    background-color: darken(map-get($theme-colors, "light-blue-color"), 10%);
+  }
+}
+
+
+.btn--tertiary-color {
+  background-color: map-get($theme-colors, "green-color-second");
+
+  &:hover {
+    background-color: darken(map-get($theme-colors, "green-color-second"), 10%);
+  }
+}

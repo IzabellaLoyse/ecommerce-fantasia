@@ -1,0 +1,43 @@
+@import "../../../../../styles/theme";
+
+.product-layout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 5rem;
+  padding: 1.875rem 0.938rem;
+  background-color: map-get($theme-colors, "secondary-color");
+  border-radius: $global-border-radius;
+  height: auto;
+
+  &__wrapper {
+    width: 40%;
+    height: auto;
+  }
+}
+
+.product-info {
+  width: 80%;
+  padding-left: 2rem;
+
+  &__title {
+    color: map-get($theme-colors, "tertiary-color");
+    font-size: 1.5rem;
+    font-weight: map-get($font-weight, "bold");
+    margin-bottom: 1.25rem;
+  }
+
+  &__author {
+    color: map-get($theme-colors, "quaternary-color");
+    font-size: 1rem;
+    font-weight: map-get($font-weight, "regular");
+  }
+
+  &__description {
+    color: map-get($theme-colors, "tertiary-color");
+    font-size: 1rem;
+    font-weight: map-get($font-weight, "light");
+    margin-bottom: 1.25rem;
+    max-width: 500px;
+  }
+}

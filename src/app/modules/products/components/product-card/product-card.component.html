@@ -1,0 +1,30 @@
+<article class="card">
+  <div class="card__content">
+    <a [routerLink]="['/product', product.id]">
+      <img
+        class="card__image"
+        src="{{ product.image }}"
+        alt="{{ product.name }}"
+      />
+    </a>
+  </div>
+
+
+  <div class="product">
+    <h2 class="product__title">{{ product.name }}</h2>
+    <p class="product__author">{{ product.author }}</p>
+
+    <div>
+      <p class="product__price">
+        {{ formattedProductPrice() }}
+      </p>
+      <span>{{ product.portions }} </span>
+    </div>
+
+    <button
+      class="btn btn--medium btn--primary-color btn-purchase"
+      (click)="addProduct()">
+      Comprar
+    </button>
+  </div>
+</article>

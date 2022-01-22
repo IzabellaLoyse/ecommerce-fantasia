@@ -1,0 +1,67 @@
+@import "../../../../../styles/theme";
+@import "../../../../../styles/button";
+
+.card {
+  background-color: map-get($theme-colors, "secondary-color");
+  border-radius: $global-border-radius;
+  box-shadow: 4px 2px 5px 0px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  min-height: 26rem;
+  width: 18.75rem;
+}
+
+.card__content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 5;
+  overflow: hidden;
+
+  a {
+    text-align: center;
+  }
+
+  .card__image {
+    width: 60%;
+    height: 70%;
+  }
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  flex: 1;
+  justify-content: space-around;
+  line-height: 25px;
+  padding: 0.8rem;
+
+  &__title {
+    font-size: 1rem;
+    font-weight: map-get($font-weight, "bold");
+    transition: $global-transition;
+
+    &:hover {
+      color: map-get($theme-colors, "light-blue-color");
+    }
+  }
+
+  &__author {
+    font-size: 0.875rem;
+    font-weight: map-get($font-weight, "light");
+  }
+}
+
+.product__price {
+  color: map-get($theme-colors, "tertiary-color");
+  font-size: 1.2rem;
+  font-weight: map-get($font-weight, "regular");
+}
+
+.btn-purchase {
+  margin-left: 3rem;
+  margin-top: 1rem;
+}

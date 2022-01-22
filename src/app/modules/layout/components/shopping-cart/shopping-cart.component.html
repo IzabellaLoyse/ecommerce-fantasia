@@ -1,0 +1,68 @@
+<div class="minicart">
+  <ul class="minicart__nav">
+    <li>
+      <div class="minicart__link" (click)="toggleCart()">
+        <fa-icon class="icon icon--cart" [icon]="faShoppingCart"></fa-icon>
+        <span class="badge">{{ getTotalProducts() }}</span>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<section class="cart-container">
+
+  <div class="shopping-cart" *ngIf="showToggleCart">
+    <div class="shopping-cart__header">
+      <p>Meu carrinho</p>
+
+      <div class="shopping-cart__total">
+        <span class="shopping-cart__text">Total: </span>
+        <span class="shopping-cart__price">{{ getTotalPriceFormatted() }}</span>
+      </div>
+    </div>
+
+    <ul class="cart-items">
+      <li class="cart-items__item" *ngFor="let product of productsList">
+        <div class="cart-items__wrapper">
+          <img src="{{ product.image }}" alt="{{ product.name }}" />
+          <div>
+            <p class="cart-items__name">{{ product.name }}</p>
+            <span class="price">{{ formattedProductPrice(product.price) }}</span>
+          </div>
+        </div>
+
+        <div class="cart-wrapper">
+          <div class="cart-wrapper__buttons">
+            <button
+              class="btn btn--primary-color btn--small"
+              (click)="decreaseAmountOfProduct(product)">
+              <fa-icon class="icon icon--minus" [icon]="faMinus"></fa-icon>
+            </button>
+
+            <span class="cart-wrapper__quantity">
+              {{ quantityOfProductInCart(product) }}
+            </span>
+
+            <button
+              class="btn btn--primary-color btn--small"
+              (click)="increaseProductQuantityInCart(product)">
+              <fa-icon class="icon icon--plus" [icon]="faPlus"></fa-icon>
+            </button>
+          </div>
+
+          <button
+            class="btn btn--small btn--secondary-color"
+            (click)="removeProductFromCart(product)">
+            remover
+          </button>
+        </div>
+      </li>
+    </ul>
+
+    <button
+      class="btn btn--medium btn--tertiary-color button--remove"
+      (click)="onCheckout()">
+      Finalizar compra
+    </button>
+  </div>
+</section>

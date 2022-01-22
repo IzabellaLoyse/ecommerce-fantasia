@@ -1,0 +1,35 @@
+@import "./styles/theme";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  background-color: map-get($theme-colors, "primary-color");
+  font-family: "Lato", sans-serif;
+  height: 100%;
+  line-height: 38px;
+  max-width: 100%;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.container-layout {
+  margin: 0 auto;
+  max-width: 90%;
+}
